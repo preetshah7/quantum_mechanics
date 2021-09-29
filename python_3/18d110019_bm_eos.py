@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep 28 21:35:48 2021
-
 @author: preet
 @rollno: 18d110019
 """
@@ -75,7 +74,6 @@ if __name__ == "__main__":
         def fit_initial_guess(self, en):
             """
             Quadratic fit to get an initial guess for the parameters.
-
             Returns:
                 tuple: (e0, b0, b1, v0)
             """
@@ -121,8 +119,15 @@ if __name__ == "__main__":
             plt.plot(self.volumes, opt_energies, label='Loaded from file!')
             plt.show()
             self.opt_params = self.fit_initial_guess(opt_energies)
-            retun self.opt_params
+            return self.opt_params
 
-        eos_bin = BirchMurnaghan(x1, y1)
-        e0, b0, b1, v0 = tuple(eos_bin.get_optimum_params())
-        print('e0 =' + str(e0) +'\nb0 =' + str(b0) +'\nb1 =' + str(b1) +'\nv0 =' + str(v0))
+    eos_bin = BirchMurnaghan(x1, y1)
+    e0, b0, b1, v0 = tuple(eos_bin.get_optimum_params())
+    print('e0 =' + str(e0) +'\nb0 =' + str(b0) +'\nb1 =' + str(b1) +'\nv0 =' + str(v0))
+    
+"""
+e0 =-362202.46082134405
+b0 =0.1268656924380577
+b1 =4
+v0 =4381.61499632735
+"""
